@@ -59,8 +59,7 @@ class Backend(BaseVCS):
         return [code, out, err]
 
     def clone(self):
-        code, out, err = self.run('git', 'clone', '--recursive', '--quiet',
-                                  self.repo_url, '.')
+        code, out, err = self.run('git', 'clone', '--recursive', self.repo_url, '.')
         if code != 0:
             raise ProjectImportError(
                 "Failed to get code from '%s' (git clone): %s" % (

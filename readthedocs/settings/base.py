@@ -186,7 +186,7 @@ ANONYMOUS_USER_ID = -1
 
 # RTD Settings
 REPO_LOCK_SECONDS = 30
-ALLOW_PRIVATE_REPOS = False
+ALLOW_PRIVATE_REPOS = True
 
 LOG_FORMAT = "[%(asctime)s] %(levelname)s [%(name)s:%(lineno)s] %(message)s"
 
