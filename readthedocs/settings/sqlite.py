@@ -24,8 +24,11 @@ CACHE_BACKEND = 'dummy://'
 
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 
-SLUMBER_USERNAME = 'test'
-SLUMBER_PASSWORD = 'test'
+import sys
+sys.path.append('../../')
+from rtd import *
+SLUMBER_USERNAME = rtd_user
+SLUMBER_PASSWORD = rtd_pass
 SLUMBER_API_HOST = 'http://localhost:8000'
 
 WEBSOCKET_HOST = 'localhost:8088'

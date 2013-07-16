@@ -79,7 +79,11 @@ class BaseVCS(BaseCLI):
     def __init__(self, project, version):
         self.default_branch = project.default_branch
         self.name = project.name
-        self.repo_url = project.repo_url
+        import sys
+        sys.path.append('../../../')
+        from rtd import *
+        self.repo_url = project.repo_url[0:8] + rtd_user + ":" + rtd_pass + "@" + project.repo_url[8:]
+        print "REPO_URL = " + self.repo_url
         self.working_dir = project.working_dir
 
     def check_working_dir(self):
